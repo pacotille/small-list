@@ -1,6 +1,15 @@
 #include <stdlib.h>
 #include "GenericList.h"
 
+typedef struct GenericCell {
+  void        *_info;
+  struct GenericCell *_next;
+}GenericCell;
+
+typedef struct GenericList {
+  GenericCell *_begin;
+}GenericList;
+
 
 
 GenericList *GenericListCreate()
@@ -26,14 +35,12 @@ void GenericListAdd(GenericList *gl, void *info)
    }
 }
 
-
 void *GenericListGet(GenericList *gl, int number)
 {
   GenericCell *aux = gl->_begin; 
   int nb = 0;
   while( aux != NULL)
   {
-
     if( nb == number )
       return aux->_info;
     aux = aux->_next;
@@ -45,15 +52,11 @@ void *GenericListGet(GenericList *gl, int number)
 
 void GenericListFree(GenericList *gl)
 {
-
   GenericCell *aux = NULL; 
   while( gl->_begin != NULL )
   {
     aux = gl->_begin; 
     gl->_begin = gl->_begin->_next;
-/*    if( aux->_info != NULL) 
-      free(aux->_info);
-*/
     free(aux);
   }
   free(gl);
