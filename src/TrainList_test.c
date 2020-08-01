@@ -20,7 +20,7 @@ void TrainListAdd(TrainList *tl, Train *train){
 }
 
 void *TrainListGet(TrainList *tl, int number){
-  GenericListGet(tl, number );
+  GenericListGet(tl, number);
 }
 
 void TrainListFree(TrainList *tl){

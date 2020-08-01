@@ -3,7 +3,6 @@
 
 
 
-struct GenericList; 
 typedef struct GenericList GenericList; 
 
 
