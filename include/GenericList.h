@@ -1,17 +1,15 @@
+#ifndef GENERICLIST_H
+#define GENERICLIST_H
 
 
 
-typedef struct GenericCell {
-  void        *_info;
-  struct GenericCell *_next;
-}GenericCell;
+struct GenericList; 
+typedef struct GenericList GenericList; 
 
-typedef struct GenericList {
-  GenericCell *_begin;
-}GenericList;
 
 GenericList *GenericListCreate();
-void GenericListAdd(GenericList *, void *info);
-void GenericListDelete(GenericList *, int number);
-void *GenericListGet(GenericList *gl, int number);
-void GenericListFree(GenericList *gl);
+void GenericListAdd(GenericList *, void *);
+void *GenericListGet(GenericList *, int);
+void GenericListFree(GenericList *);
+
+#endif
