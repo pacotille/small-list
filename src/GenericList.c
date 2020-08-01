@@ -19,7 +19,12 @@ GenericList *GenericListCreate()
   return  auxgl;
 }
 
-
+//! Add cell in a generic list.
+/*!
+  \param gl a generic list.
+  \param info an info to add to the list.
+  \return nothing
+*/
 void GenericListAdd(GenericList *gl, void *info)
 {
   GenericCell *auxgcell = (GenericCell *)malloc(sizeof(GenericCell));
